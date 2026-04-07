@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "InterLight";
+  src: url(../assets/fonts/Inter_18pt-Light.ttf);
+}
+
+@font-face{
+  font-family: "AlluraRegular";
+  src: url(../assets/fonts/Allura-Regular.ttf);
+}
+
+@font-face {
+  font-family: "PoppinsLight";
+  src: url(../assets/fonts/Poppins-Light.ttf);
+}
+
+$font1: "InterLight", serif;
+$font2: "PoppinsLight", serif;
+$font3: "AlluraRegular", serif;
+$orange: #da6803;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* pour que les éléments se placent correctement */
+}
+
+li {
+  list-style: none;
+}
+
+// @mixin flexCenter {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }

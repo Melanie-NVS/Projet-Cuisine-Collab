@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recettes de cuisine collaboratives | Partage & Inspiration</title>
+  <meta name="description"
+    content="Découvrez et partagez des recettes de cuisine collaboratives. Trouvez des idées simples, rapides et gourmandes pour tous les goûts." />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="./styles/index.css" />
+</head>
+
+<body>
+  <nav>
+    <ul class="nav-left">
+      <li><a href="./index.html" class="active">Home</a></li>
+      <li><a href="./pages_html/recipe.html">Recipe</a></li>
+      <li><a href="./pages_html/search.html">Search</a></li>
+      <li><a href="./pages_html/contact.html">Contact</a></li>
+    </ul>
+    <ul class="nav-right">
+      <li>
+        <a href="#"><i class="fas fa-magnifying-glass"></i></a>
+      </li>
+      <li><a href="./pages_html/signIn.html">Sign In</a></li>
+      <li><a href="./pages_html/signUp.html" class="btn">Sign Up</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="main-header">
+      <h1>Cuisine collaborative simple, gourmande et conviviale</h1>
+      <p>Partagez vos recettes, découvrez de nouvelles idées, échangez avec d'autres passionnés et créez votre propre univers culinaire dans une ambiance moderne et chaleureuse.</p>
+      <button>Sign up today<i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </header>
+
+  <section class="Menu-carte">
+    <div class="type-plat">
+    <div class="col-gauche">
+      <h2>Recipes</h2>
+    </div>
+      <div class="menu-titre">
+        <button class="btn-accordeon" id="btnTypes">
+          <span>Type de plat</span>
+          <i id="iconeToggle" class="fas fa-plus"></i>
+        </button>
+      </div>
+      <ul class="liste" id="listeTypes">
+        <li><button>Tous</button></li>
+        <li><button>Pâtes</button></li>
+        <li><button>Soupe</button></li>
+        <li><button>Salades</button></li>
+        <li><button>Apéritifs</button></li>
+        <li><button>Petit-déjeuner</button></li>
+        <li><button>Végétarien</button></li>
+        <li><button>Végan</button></li>
+        <li><button>Rapide & facile</button></li>
+        <li><button>Healthy</button></li>
+        <li><button>Sans gluten</button></li>
+        <li><button>Sans lactose</button></li>
+      </ul>
+    </div>
+
+    <section class="recettes">
+      <div class="col-droite">
+      <div class="input-search">
+        <a href="#"><i class="fas fa-magnifying-glass"></i></a>
+        <input type="text" placeholder="Search for recipes...">
+      </div>
+      <div class="tri">
+        <button class="btn" id="btnTri" type="button">
+          Trier : <span id="triLabel">Récent</span>
+          <span>▾</span>
+        </button>
+      </div>
+    </div>
+      <div class="grille">
+        <!-- <div class="image-box">
+          <img src="../${recette.img}" alt="${recette.titre}">
+            <button class="coeur">
+              <i class="far fa-heart" onclick="ajouteFavoris(this)"></i>
+            </button>
+      </div>
+      <div class="contenu">
+          <h3>${recette.titre}</h3>
+            <div class="infos">
+              <div class="note">
+                <i class="fa-regular fa-star"></i>
+                <span>${Number(recette.moyenne_note).toFixed(1)} (${recette.nombre_notes})</span>
+              </div>
+              <span class="auteur">par ${recette.auteur}</span>
+            </div>
+      </div> -->
+      </div>
+        <div class="pagination" id="pagination">
+          <button id="prev">&lt;</button>
+          <div id="pagesNumbers"></div>
+          <button id="next">&gt;</button>
+        </div>
+    </section>
+  </section>
+
+
+
+  <section class="abonnement">
+    <h2>Soyez les premiers informés des dernières offres, recevez de nouvelles recettes tendances et plus encore !</h2>
+    <form class="form-abonnement">
+      <input type="email" placeholder="Entrer votre email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+  
+
+  <section class="container-socials">
+    <div class="socials">
+      <ul>
+        <li>
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </li>
+        <li>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <footer>
+    <ul>
+      <li>Presentations</li>
+      <li>Professionals</li>
+      <li>Stores</li>
+      <li>Webinars</li>
+      <li>Workshops</li>
+      <li>Local Meetups</li>
+      <li>Our Initiatives</li>
+      <li>Giving Back</li>
+      <li>Communities</li>
+      <li>Contact Form</li>
+      <li>Work With Us</li>
+      <li>Visit Us</li>
+    </ul>
+    <h5>Made by in Guatemala City.</h5>
+  </footer>
+  <script src="./Javascript/index.js"></script>
+</body>
+
+</html>

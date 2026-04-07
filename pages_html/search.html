@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recherche de recettes | Trouvez des idées selon vos ingrédients</title>
+  <meta name="description"
+    content="Recherchez des recettes par ingrédients, type de cuisine ou temps de préparation et trouvez l’idée parfaite." />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../styles/index.css" />
+</head>
+
+<body>
+  <nav>
+    <ul class="nav-left">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./recipe.html">Recipe</a></li>
+      <li><a href="./search.html" class="active">Search</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+    <ul class="nav-right">
+      <li>
+        <a href="#"><i class="fas fa-magnifying-glass"></i></a>
+      </li>
+      <li><a href="./signIn.html">Sign In</a></li>
+      <li><a href="./signUp.html" class="btn">Sign Up</a></li>
+    </ul>
+  </nav>
+
+  <section class="recherche-recettes">
+      <div class="col-droite">
+      <div class="input-search">
+        <a href="#"><i class="fas fa-magnifying-glass"></i></a>
+        <input type="text" placeholder="Search for recipes...">
+      </div>
+      <div class="tri">
+        <button class="btn" id="btnTri" type="button">
+          Trier : <span id="triLabel">Récent</span>
+          <span>▾</span>
+        </button>
+      </div>
+    </div>
+      <div class="grille">
+        <!-- Les recettes seront affichées ici -->
+      </div>
+      <div class="pagination" id="pagination">
+    <button id="prev">&lt;</button>
+    <div id="pagesNumbers"></div>
+    <button id="next">&gt;</button>
+      </div>
+  </section>
+
+  
+
+
+  <section class="container-socials">
+    <div class="socials">
+      <ul>
+        <li>
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </li>
+        <li>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <footer>
+    <ul>
+      <li>Presentations</li>
+      <li>Professionals</li>
+      <li>Stores</li>
+      <li>Webinars</li>
+      <li>Workshops</li>
+      <li>Local Meetups</li>
+      <li>Our Initiatives</li>
+      <li>Giving Back</li>
+      <li>Communities</li>
+      <li>Contact Form</li>
+      <li>Work With Us</li>
+      <li>Visit Us</li>
+    </ul>
+    <h5>Made by in Guatemala City.</h5>
+  </footer>
+  <script src="../Javascript/index.js"></script>
+</body>
+
+</html>

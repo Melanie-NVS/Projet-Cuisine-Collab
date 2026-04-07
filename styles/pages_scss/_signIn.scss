@@ -1,0 +1,116 @@
+.signIn {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  min-height: 800px;
+  width: 90%;
+  margin: 80px auto 70px;
+  font-family: $font2;
+
+  .inscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 17px;
+
+      li {
+        border-radius: 150px;
+        height: 40px;
+        width: 40px;
+        font-size: 0.9rem;
+        margin-right: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s ease;
+      }
+      li:hover {
+        box-shadow: #17191a94 0px 3px 7px;
+        transform: scale(1.1);
+      }
+
+      i {
+        font-size: 1.2rem;
+      }
+
+      li:nth-child(1) {
+        border: 1px solid #0866ff;
+        i {
+          color: #0866ff;
+        }
+      }
+      li:nth-child(2) {
+        border: 1px solid red;
+        i {
+          color: red;
+        }
+      }
+      li:nth-child(3) {
+        border: 1px solid #009ded;
+        i {
+          color: #009ded;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 2.7rem;
+      margin: 60px auto 30px;
+    }
+    p {
+      font-size: 1.2rem;
+      margin: 30px auto 20px;
+    }
+
+    form {
+      font-size: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      padding: 30px 50px;
+      color: black;
+
+      textarea,
+      input[type="text"],
+      input[type="password"] {
+        border: rgba(128, 128, 128, 0.226) 1px solid;
+        border-radius: 150px;
+        resize: none;
+        width: 320px;
+        padding: 12px 20px;
+        text-align: center;
+        box-sizing: border-box;
+        font-family: $font2;
+        outline: none;
+      }
+    }
+    .submit-container {
+      padding: 20px 45px;
+    }
+  }
+
+  .imgSignUp {
+    background: url(/assets/img/ramen.jpg) no-repeat center/cover;
+    width: 90%;
+    height: 100%;
+    border-radius: 50px;
+    color: #da6803;
+    text-align: center;
+
+    h1 {
+      margin: 180px auto 30px;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+  }
+}
