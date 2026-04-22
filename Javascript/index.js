@@ -1,3 +1,30 @@
+//NAVBAR
+// Fonction pour mettre à jour la barre de navigation
+function mettreAJourNav() {
+    // On récupère le pseudo stocké dans le navigateur
+    const pseudoStocke = localStorage.getItem('pseudoUtilisateur');
+    
+    const liensAuth = document.querySelectorAll('.lien-authentification');
+    const lienUser = document.querySelector('.lien-utilisateur');
+    const baliseNom = document.getElementById('nom-utilisateur-nav');
+
+    if (pseudoStocke) {
+        // Si on a un pseudo, on cache "Se connecter/S'inscrire" et on montre le profil
+        liensAuth.forEach(lien => lien.style.display = 'none');
+        lienUser.style.display = 'block';
+        baliseNom.textContent = pseudoStocke;
+    } else {
+        // Sinon, on montre les boutons de connexion
+        liensAuth.forEach(lien => lien.style.display = 'block');
+        lienUser.style.display = 'none';
+    }
+}
+
+// On lance la fonction quand la page est prête
+window.addEventListener('DOMContentLoaded', mettreAJourNav);
+
+//------------------------------------------------------------
+
 //JS POUR LA PAGE HOME
 //POUR LE TRI (RECENT, ENTREE, PLAT, DESSERT)
 const btn = document.getElementById("btnTri"); // recupère le bouton

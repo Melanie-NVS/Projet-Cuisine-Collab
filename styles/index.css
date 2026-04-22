@@ -53,6 +53,29 @@ nav ul li a:hover {
 nav ul li a.active {
   color: #da6803;
 }
+nav ul li a.bouton-profil {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+nav ul li a.bouton-profil #nom-utilisateur-nav {
+  color: #da6803;
+}
+nav ul li a.bouton-profil i {
+  font-size: 1.4rem;
+  color: #da6803;
+}
+nav ul li .btn {
+  background-color: #da6803;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+nav ul li .btn:hover {
+  background-color: rgb(167.6923076923, 80, 2.3076923077);
+  color: white;
+}
 nav ul li i {
   font-size: 1.1rem;
   color: #333;

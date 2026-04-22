@@ -17,6 +17,7 @@ nav {
     li {
       list-style: none;
 
+      // Gestion des liens classiques et du bouton profil
       a {
         text-decoration: none;
         color: #333;
@@ -31,7 +32,38 @@ nav {
         &.active {
           color: $orange;
         }
+
+        // Style spécifique pour le bouton quand l'utilisateur est connecté
+        &.bouton-profil {
+          display: flex;
+          align-items: center;
+          gap: 10px; // Espace entre l'icône et le pseudo
+
+          #nom-utilisateur-nav {
+            color: $orange; // Le pseudo s'affiche directement en orange
+          }
+
+          i {
+            font-size: 1.4rem; // Icône un peu plus grande pour le profil
+            color: $orange;
+          }
+        }
       }
+
+      // Style pour les boutons "Se connecter" et "S'inscrire"
+      .btn {
+        background-color: $orange;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 20px;
+        transition: 0.3s ease;
+
+        &:hover {
+          background-color: darken($orange, 10%);
+          color: white;
+        }
+      }
+
       i {
         font-size: 1.1rem;
         color: #333;

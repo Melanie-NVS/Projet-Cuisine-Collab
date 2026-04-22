@@ -31,12 +31,14 @@
         </li>
       </ul>
       <p>Ou utilisez votre compte email :</p>
-      <form action="">
+      <form id="formulaire-inscription">
+        <label for="pseudo">Pseudo du Chef</label>
+        <input type="text" id="pseudo" placeholder="Chef Mélanie" required />
         <label for="email">Email</label>
         <input type="text" id="email" placeholder="chef@exemple.com" required />
         <label for="password">Mot de passe</label>
         <input type="password" id="password" placeholder="********" required />
-        <p>Mot de passe oublié ?</p>
+        <p>En vous inscrivant, vous acceptez nos conditions générales.</p>
         <div class="submit-container">
           <input type="submit" class="btn" value="S'inscrire" />
         </div>
@@ -44,7 +46,7 @@
     </div>
     <div class="imgSignUp">
       <h1>Prêt à cuisiner ?</h1>
-      <p>Pour rester connecté, connectez-vous avec vos informations personnelles</p>
+      <p>Vous avez déjà un compte ?<br>Connectez-vous pour retrouver vos recettes</p>
       <button class="btn">Connexion</button>
     </div>
   </section>
