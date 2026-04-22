@@ -6,7 +6,7 @@ const app = express();
 
 // 1. Configuration et Middlewares
 app.use(cors());
-app.use(express.json()); // 👈 INDISPENSABLE pour lire les données des formulaires
+app.use(express.json()); //INDISPENSABLE pour lire les données des formulaires
 
 // Dire à node où est ton site
 app.use(express.static(path.join(__dirname, "..")));
