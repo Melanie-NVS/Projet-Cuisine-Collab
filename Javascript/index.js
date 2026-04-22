@@ -1,4 +1,26 @@
 //NAVBAR
+
+//GESTION DE L'AFFICHAGE DU PROFIL DANS LA NAV
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. On regarde si un pseudo est enregistré dans le navigateur
+    const pseudoEnregistre = localStorage.getItem('pseudoUtilisateur');
+    
+    // 2. On récupère tes éléments HTML (avec tes classes en français)
+    const liensConnexion = document.querySelectorAll('.lien-authentification');
+    const lienEspaceChef = document.querySelector('.lien-utilisateur');
+    const zonePseudo = document.getElementById('nom-utilisateur-nav');
+
+    // 3. Si l'utilisateur est connecté
+    if (pseudoEnregistre && lienEspaceChef) {
+        // On cache "Se connecter" et "S'inscrire"
+        liensConnexion.forEach(li => li.style.display = 'none');
+        
+        // On affiche l'Espace Chef et on écrit son nom
+        lienEspaceChef.style.display = 'block';
+        zonePseudo.textContent = pseudoEnregistre;
+    }
+});
+
 // Fonction pour mettre à jour la barre de navigation
 function mettreAJourNav() {
     // On récupère le pseudo stocké dans le navigateur
