@@ -19,32 +19,33 @@
   <nav>
     <ul class="nav-left">
       <li><a href="./index.html" class="active">Home</a></li>
-      <li><a href="./pages_html/recipe.html">Recipe</a></li>
-      <li><a href="./pages_html/search.html">Search</a></li>
+      <li><a href="./pages_html/recipe.html">Recette</a></li>
+      <li><a href="./pages_html/search.html">Recherche</a></li>
       <li><a href="./pages_html/contact.html">Contact</a></li>
     </ul>
     <ul class="nav-right">
       <li>
         <a href="#"><i class="fas fa-magnifying-glass"></i></a>
       </li>
-      <li><a href="./pages_html/signIn.html">Sign In</a></li>
-      <li><a href="./pages_html/signUp.html" class="btn">Sign Up</a></li>
+      <li><a href="./pages_html/signIn.html" class="btn">Se connecter</a></li>
+      <li><a href="./pages_html/signUp.html" class="btn">S'inscrire</a></li>
     </ul>
   </nav>
 
   <header>
     <div class="main-header">
       <h1>Cuisine collaborative simple, gourmande et conviviale</h1>
-      <p>Partagez vos recettes, découvrez de nouvelles idées, échangez avec d'autres passionnés et créez votre propre univers culinaire dans une ambiance moderne et chaleureuse.</p>
+      <p>Partagez vos recettes, découvrez de nouvelles idées, échangez avec d'autres passionnés et créez votre propre
+        univers culinaire dans une ambiance moderne et chaleureuse.</p>
       <button>Sign up today<i class="fa-solid fa-arrow-right"></i></button>
     </div>
   </header>
 
   <section class="Menu-carte">
     <div class="type-plat">
-    <div class="col-gauche">
-      <h2>Recipes</h2>
-    </div>
+      <div class="col-gauche">
+        <h2>Recettes</h2>
+      </div>
       <div class="menu-titre">
         <button class="btn-accordeon" id="btnTypes">
           <span>Type de plat</span>
@@ -69,17 +70,17 @@
 
     <section class="recettes">
       <div class="col-droite">
-      <div class="input-search">
-        <a href="#"><i class="fas fa-magnifying-glass"></i></a>
-        <input type="text" placeholder="Search for recipes...">
+        <div class="input-search">
+          <a href="#"><i class="fas fa-magnifying-glass"></i></a>
+          <input type="text" placeholder="Rechercher des recettes...">
+        </div>
+        <div class="tri">
+          <button class="btn" id="btnTri" type="button">
+            Trier : <span id="triLabel">Récent</span>
+            <span>▾</span>
+          </button>
+        </div>
       </div>
-      <div class="tri">
-        <button class="btn" id="btnTri" type="button">
-          Trier : <span id="triLabel">Récent</span>
-          <span>▾</span>
-        </button>
-      </div>
-    </div>
       <div class="grille">
         <!-- <div class="image-box">
           <img src="../${recette.img}" alt="${recette.titre}">
@@ -98,11 +99,11 @@
             </div>
       </div> -->
       </div>
-        <div class="pagination" id="pagination">
-          <button id="prev">&lt;</button>
-          <div id="pagesNumbers"></div>
-          <button id="next">&gt;</button>
-        </div>
+      <div class="pagination" id="pagination">
+        <button id="prev">&lt;</button>
+        <div id="pagesNumbers"></div>
+        <button id="next">&gt;</button>
+      </div>
     </section>
   </section>
 
@@ -115,7 +116,7 @@
       <button type="submit">Subscribe</button>
     </form>
   </section>
-  
+
 
   <section class="container-socials">
     <div class="socials">
