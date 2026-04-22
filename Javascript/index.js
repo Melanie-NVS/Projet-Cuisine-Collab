@@ -1,50 +1,47 @@
-//NAVBAR
+//INSCRIPTION
+const form = document.getElementById("formulaire-inscription");
 
-//GESTION DE L'AFFICHAGE DU PROFIL DANS LA NAV
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. On regarde si un pseudo est enregistré dans le navigateur
-    const pseudoEnregistre = localStorage.getItem('pseudoUtilisateur');
-    
-    // 2. On récupère tes éléments HTML (avec tes classes en français)
-    const liensConnexion = document.querySelectorAll('.lien-authentification');
-    const lienEspaceChef = document.querySelector('.lien-utilisateur');
-    const zonePseudo = document.getElementById('nom-utilisateur-nav');
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    // 3. Si l'utilisateur est connecté
-    if (pseudoEnregistre && lienEspaceChef) {
-        // On cache "Se connecter" et "S'inscrire"
-        liensConnexion.forEach(li => li.style.display = 'none');
-        
-        // On affiche l'Espace Chef et on écrit son nom
-        lienEspaceChef.style.display = 'block';
-        zonePseudo.textContent = pseudoEnregistre;
+    const pseudo = document.getElementById("pseudo").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mdp = document.getElementById("mdp").value.trim();
+
+    if (!pseudo) {
+      alert("Le pseudo est obligatoire");
+      return;
     }
-});
 
-// Fonction pour mettre à jour la barre de navigation
-function mettreAJourNav() {
-    // On récupère le pseudo stocké dans le navigateur
-    const pseudoStocke = localStorage.getItem('pseudoUtilisateur');
-    
-    const liensAuth = document.querySelectorAll('.lien-authentification');
-    const lienUser = document.querySelector('.lien-utilisateur');
-    const baliseNom = document.getElementById('nom-utilisateur-nav');
-
-    if (pseudoStocke) {
-        // Si on a un pseudo, on cache "Se connecter/S'inscrire" et on montre le profil
-        liensAuth.forEach(lien => lien.style.display = 'none');
-        lienUser.style.display = 'block';
-        baliseNom.textContent = pseudoStocke;
-    } else {
-        // Sinon, on montre les boutons de connexion
-        liensAuth.forEach(lien => lien.style.display = 'block');
-        lienUser.style.display = 'none';
+    if (!email) {
+      alert("L'email est obligatoire");
+      return;
     }
+
+    if (!mdp) {
+      alert("Le mot de passe est obligatoire");
+      return;
+    }
+
+    const response = await fetch("/api/inscription", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ pseudo, email, mdp })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      alert(data.message);
+      return;
+    }
+
+    alert("Inscription réussie");
+  });
 }
-
-// On lance la fonction quand la page est prête
-window.addEventListener('DOMContentLoaded', mettreAJourNav);
-
 //------------------------------------------------------------
 
 //JS POUR LA PAGE HOME
