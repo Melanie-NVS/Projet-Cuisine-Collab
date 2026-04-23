@@ -46,13 +46,13 @@ if (form) {
 
 //JS POUR LA PAGE HOME
 //POUR LE TRI (RECENT, ENTREE, PLAT, DESSERT)
-const btn = document.getElementById("btnTri"); // recupère le bouton
-const triLabel = document.getElementById("triLabel"); // recupère le span pour changer le texte
-let menuOuvert = false; // sert à savoir si le menu est ouvert ou pas
+const btn = document.getElementById("btnTri"); // recupère l'id
+const triLabel = document.getElementById("triLabel"); // recupère l'id pour changer le texte
+let menuOuvert = false; // crée une variable pour savoir si le menu est ouvert ou fermé
 
-btn.addEventListener("click", (event) => {
+btn.addEventListener("click", (event) => { //ecoute le clic 
   event.stopPropagation(); // empêche fermeture immédiate
-  const triDiv = btn.parentElement; // récupère la div parent (.tri)
+  const triDiv = btn.parentElement; // récupère la div parent du bouton (.tri)
 
   if (!menuOuvert) {
     // si le menu n'est pas ouvert, on l'ouvre

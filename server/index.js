@@ -136,7 +136,7 @@ app.post("/api/connexion", (req, res) => {
   });
 });
 
-// 3. Lancement serveur
+// Lancement serveur
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Serveur lancé sur http://localhost:${PORT}`);
