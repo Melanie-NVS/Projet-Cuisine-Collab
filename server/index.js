@@ -1,15 +1,15 @@
-const express = require("express");
-const mysql = require("mysql2");
-const path = require("path");
-const cors = require("cors");
-const bcrypt = require("bcrypt");
+// Mes imports 
+const express = require("express"); // framework pour créer le serveur
+const mysql = require("mysql2"); // pour se connecter à MySQL
+const path = require("path"); // pour s'assurer qu'il trouve bien le dossier
+const cors = require("cors"); // pour autoriser les requêtes (front <-> back) sécurité
+const bcrypt = require("bcrypt"); // hashage mdp
+const app = express(); // création de l'app Express
 
-const app = express();
-
-// 1. Configuration et middlewares
-app.use(cors());
-app.use(express.json());
-app.use(express.static(path.join(__dirname, "..")));
+// 1. Configuration des middlewares
+app.use(cors()); // pour autoriser les requêtes (front <-> back)
+app.use(express.json()); // pour transformer le texte JSON en objet JS utilisable dans req.body
+app.use(express.static(path.join(__dirname, ".."))); // c'est une porte ouverte vers le dossier parent (le projet) pour que le serveur puisse servir les fichiers statiques (HTML, CSS, JS) du front-end. Sans ça, il ne trouverait pas les fichiers et ne pourrait pas les afficher dans le navigateur.
 
 // 2. Connexion MySQL
 const db = mysql.createConnection({
@@ -27,16 +27,14 @@ db.connect((err) => {
   console.log("✅ Connecté à MySQL");
 });
 
-// --- ROUTES API ---
-
-// API recettes
-app.get("/api/recettes", (req, res) => {
+// ROUTES API 
+app.get("/api/recettes", (req, res) => { // route pour récupérer les recettes
   const sql = `
     SELECT 
       r.id, r.titre, r.img, r.description, r.portions,
       u.pseudo AS auteur,
-      AVG(n.note) AS moyenne_note,
-      COUNT(n.note) AS nombre_notes
+      AVG(n.note) AS moyenne_note, 
+      COUNT(n.note) AS nombre_notes 
     FROM recettes r
     LEFT JOIN utilisateurs u ON r.utilisateur_id = u.id
     LEFT JOIN notes n ON r.id = n.recette_id
@@ -139,5 +137,5 @@ app.post("/api/connexion", (req, res) => {
 // Lancement serveur
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`🚀 Serveur lancé sur http://localhost:${PORT}`);
+  console.log(`Serveur lancé sur http://localhost:${PORT}`);
 });
